@@ -61,7 +61,7 @@
   pages.forEach((page, qi) => {
     const answers = correctAnswers(page);
     const answerContent = page.querySelector('.answer-content');
-    if (answerContent) answerContent.classList.add('tr-hidden');
+    if (answerContent) answerContent.style.display="none";
 
     const form = document.createElement('form');
     form.className = 'tr-form';
@@ -139,7 +139,7 @@
       feedback.textContent = correct
         ? 'Correct!'
         : 'Incorrect. Correct answer: ' + answers.join(', ');
-      if (answerContent) answerContent.classList.remove('tr-hidden');
+      if (answerContent) answerContent.style.display="block";
       updateBar();
     });
 
